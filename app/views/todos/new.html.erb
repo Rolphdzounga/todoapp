@@ -1,0 +1,33 @@
+<h1>Création d'une Tache</h1>
+
+<% if @todo.errors.any? %>
+	<h2>impossible d'effectuer l'opération : </h2>
+	<ul>
+		<% @todo.errors.messages.each do |n,msg| %>
+			<% msg.each do |e| #msg est un tableau %>
+				<li>
+					<%= e %>
+				</li>
+			<%end%>	
+		<%end%>		
+	</ul>
+<%end%>
+
+
+<%= form_for @todo, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+	<p>
+		<%= f.label :name, "Nom : " %><br>
+		<%= f.text_field :name %>
+	</p>
+  
+  	<p>	
+  		<%= f.label :description, "Description : " %><br>
+  		<%= f.text_area :description, size: "60x12" %>
+  	</p>
+  
+  	<p>
+  		<%= f.submit "Creer" %>
+  	</p>
+  
+
+<%end%>
