@@ -9,12 +9,7 @@
   </head>
 
   <body>
-  <ul>
-    <% flash.each do |nom, msg| %>
-      <li><%= msg %></li>
-    <%end%>
-  </ul>
-  DZOUNGA Rolph Francel
+ <%= render 'layouts/messages' %>
     <%= yield %>
   </body>
 </html>
