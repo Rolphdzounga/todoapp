@@ -1,0 +1,25 @@
+<h1>Liste des Globale des Taches</h1>
+
+<p><%= link_to "créer une nouvelle tache", new_todo_path %></p>
+
+<table>
+	<tr>
+		<th>Tache</th>
+		<th>Description</th>
+		<th></th>
+	</tr>
+
+
+	<% @todos.each do |t| %>
+		<tr>
+			<td>
+			<%= link_to t do %>
+				<strong><%= t.name %></strong>
+			<%end%>
+			</td>
+			<td><%= t.description %></td>
+			<td><%= link_to "Editer", edit_todo_path(t) %></td>
+		</tr>
+	<%end%>
+
+</table>

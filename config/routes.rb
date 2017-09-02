@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root "pages#hello"
   get "/about",to:"pages#about"
   get "/help", to: "pages#help"
-  get "/todos", to: "todos#todos"
+  #get "/todos", to: "todos#todos"
   resources :todos
 end
