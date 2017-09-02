@@ -19,6 +19,8 @@
 			</td>
 			<td><%= t.description %></td>
 			<td><%= link_to "Editer", edit_todo_path(t) %></td>
+			<td><%= link_to "Supprimer", todo_path(t), method: :delete, data: {confirm: "
+				attention, svp, Confirmez la Suppression..."}  %></td>
 		</tr>
 	<%end%>
 
